@@ -1,0 +1,19 @@
+{
+  "name": "koa-server",
+  "version": "1.0.0",
+  "description": "Koa-jwt Educational Project",
+  "main": "src/app.js",
+  "repository": "https://github.com/devesta/koa-jwt.git",
+  "author": "Vesta",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-jwt": "^3.5.1",
+    "koa-logger": "^3.2.0"
+  }
+}
