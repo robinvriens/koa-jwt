@@ -16,6 +16,9 @@ app.use((ctx, next) => {
   })
 })
 
+app.use(logger())
+app.use(jwt({ secret: 'shared-secret' }).unless({ path: [/^\/public/] }))
+
 // Unprotected middleware
 app.use((ctx, next) => {
   if (ctx.url.match(/^\/public/)) {
@@ -24,9 +27,6 @@ app.use((ctx, next) => {
     return next()
   }
 })
-
-app.use(logger())
-app.use(jwt({ secret: 'shared-secret' }))
 
 // Protected middleware
 app.use((ctx) => {
