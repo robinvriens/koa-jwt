@@ -1,6 +1,8 @@
 const Koa = require('koa')
 const logger = require('koa-logger')
+const bodyParser = require('koa-bodyparser')
 const jwt = require('koa-jwt')
+const api = require('./api')
 
 const app = new Koa()
 
@@ -17,7 +19,10 @@ app.use((ctx, next) => {
 })
 
 app.use(logger())
+app.use(bodyParser())
 app.use(jwt({ secret: 'shared-secret' }).unless({ path: [/^\/public/] }))
+app.use(api.routes())
+app.use(api.allowedMethods())
 
 // Unprotected middleware
 app.use((ctx, next) => {
