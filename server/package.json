@@ -11,6 +11,7 @@
     "start": "nodemon src/app.js"
   },
   "dependencies": {
+    "jsonwebtoken": "^8.4.0",
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
     "koa-jwt": "^3.5.1",

@@ -34,10 +34,10 @@ app.use((ctx, next) => {
 })
 
 // Protected middleware
-app.use((ctx) => {
-  if (ctx.url.match(/^\/api/)) {
-    ctx.body = 'protected\n'
-  }
-})
+// app.use((ctx) => {
+//   if (ctx.url.match(/^\/api/)) {
+//     ctx.body = 'protected\n'
+//   }
+// })
 
 app.listen(8000)
